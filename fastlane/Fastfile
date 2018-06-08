@@ -17,3 +17,21 @@ platform :ios do
     # add actions here: https://docs.fastlane.tools/actions
   end
 end
+
+lane :ggwp do 
+	
+	increment_build_number
+
+  	gym(
+ 		project: 'ForLearn.xcodeproj', 
+ 		scheme: 'ForLearn',
+ 		clean: true,
+ 		export_method: 'ad-hoc'
+  		)
+
+  	hockey(
+		api_token: "7ddb559858f54695b53e985790a4efaf"
+  		)
+end
+
+
