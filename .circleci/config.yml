@@ -1,0 +1,23 @@
+# iOS CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/ios-migrating-from-1-2/ for more details
+#
+version: 2
+jobs:
+  build:
+
+    # Specify the Xcode version to use
+    macos:
+      xcode: "9.3.1"
+
+    steps:
+      - checkout
+
+      # Build the app and run tests
+      - run:
+          name: Install
+          command: bundle install
+
+      - run:
+          name: Build
+          command: bundle exec fastlane ggwp
