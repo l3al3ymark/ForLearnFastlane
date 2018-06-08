@@ -22,10 +22,11 @@ lane :ggwp do
 	
 	increment_build_number
 
-  # match(
-  #   type: 'adhoc',
-  #   app_identifier: 'com.landmark.ForLearn'
-  # )
+  match(
+    readonly: true,
+    type: 'adhoc',
+    app_identifier: 'com.landmark.ForLearn'
+  )
 
   gym(
  		project: 'ForLearn.xcodeproj', 
