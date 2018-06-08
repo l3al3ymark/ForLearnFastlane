@@ -22,16 +22,21 @@ lane :ggwp do
 	
 	increment_build_number
 
-  	gym(
+  match(
+    type: 'adhoc',
+    app_identifier: 'com.landmark.ForLearn'
+  )
+
+  gym(
  		project: 'ForLearn.xcodeproj', 
  		scheme: 'ForLearn',
  		clean: true,
  		export_method: 'ad-hoc'
-  		)
+  )
 
-  	hockey(
+  hockey(
 		api_token: "7ddb559858f54695b53e985790a4efaf"
-  		)
+  )
 end
 
 
